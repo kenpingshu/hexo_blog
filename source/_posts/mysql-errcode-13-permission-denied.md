@@ -5,7 +5,7 @@ tags: Mysql
 categories: Mysql
 ---
 今天在執行 Mysql 
-```mysql
+```sql
 SELECT * FROM `a` INTO OUTFILE '/var/www/html/a.csv';
 ```
 出現以下錯誤
@@ -14,7 +14,7 @@ Can't create/write to file '/var/www/html/a.csv' (Errcode: 13 - Permission denie
 ```
 把資料夾權限全部改成777都沒用  
 後來發現需要改動以下檔案
-```bash
+```sh
 sudo vim /etc/apparmor.d/usr.sbin.mysqld
 ```
 在文件裡面多加一行
